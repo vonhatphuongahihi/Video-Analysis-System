@@ -1,0 +1,96 @@
+# ADK Application Configuration
+
+# Application settings
+app:
+  name: "ADK Video Analysis System"
+  version: "0.1.0"
+  debug: true
+  log_level: "INFO"
+
+# Video Agent Configuration
+video_agent:
+  max_concurrent_downloads: 3
+  download_timeout: 300  
+  output_directory: "output/videos"
+  supported_formats: ["mp4", "mp3", "webm"]
+  
+  # YouTube API settings
+  youtube:
+    api_key: "${YOUTUBE_API_KEY}"
+    max_results: 50
+    region_code: "US"
+  
+  # Download settings
+  download:
+    quality: "best"
+
+# Chatbot Agent Configuration
+chatbot_agent:
+  model: "gpt-4o"
+  max_context_length: 4000
+  response_timeout: 30
+  
+  # Chat settings
+  chat:
+    enable_memory: true
+    max_history: 10
+    personality: "helpful_assistant"
+
+# Host Agent Configuration
+host_agent:
+  max_workflows: 10
+  workflow_timeout: 600
+  enable_monitoring: true
+  
+  # Agent coordination
+  coordination:
+    retry_attempts: 3
+    retry_delay: 5
+    parallel_processing: true
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins: ["http://localhost:3000", "http://localhost:8501"]
+  
+  # Rate limiting
+  rate_limit:
+    requests_per_minute: 60
+    burst_size: 10
+
+# UI Configuration
+ui:
+  framework: "streamlit"
+  theme: "light"
+  page_title: "ADK Video Analysis"
+  
+  # Features
+  features:
+    video_upload: true
+    batch_processing: true
+    real_time_status: true
+    export_results: true
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
+  max_size: "10MB"
+  backup_count: 5
+
+# Security Configuration
+security:
+  enable_authentication: false
+  secret_key: "${SECRET_KEY}"
+  session_timeout: 3600  
+  
+  # API Keys 
+  api_keys:
+    openai: "${OPENAI_API_KEY}"
+    youtube: "${YOUTUBE_API_KEY}"
+
+development:
+  hot_reload: true
+  debug_mode: true 

@@ -151,7 +151,7 @@ def main():
     # Create logs directory
     Path("logs").mkdir(exist_ok=True)
     
-    print(f"🎬 ADK System Runner - Mode: {args.mode}")
+    print(f"Video Analysis System Runner - Mode: {args.mode}")
     print("=" * 50)
     
     try:

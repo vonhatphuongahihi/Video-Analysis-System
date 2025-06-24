@@ -59,7 +59,7 @@ def main():
     init_session_state()
     
     # Header
-    st.title("🎬 ADK Video Analysis System")
+    st.title("🎬 Video Analysis System")
     st.markdown("---")
     
     # Sidebar
